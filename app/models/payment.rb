@@ -17,7 +17,7 @@ class Payment < ActiveRecord::Base
     customer = Stripe::Customer.create email: email, card: token
     
     Stripe::Charge.create customer: customer.id,
-          amount: 1000, #in cents (amount will be $10)
+          amount: 100000, #in cents (amount will be $10)
           description: 'Premium',
           currency: 'usd'
   end
